@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <title>Document</title>
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css" />
+      <link rel="stylesheet" href="css/reset.css" />
+      <link rel="stylesheet" href="css/style.css" />
+   </head>
+
+   <body>
+      <p id="skipNav"><a href="#">본문바로가기</a></p>
+      <div id="wrap">
+         <header id="header">
+            <div class="inner">
+               <h1>
+                  <a href="#"><img src="https://via.placeholder.com/100x50" alt="가상이미지" /></a>
+               </h1>
+            </div>
+         </header>
+         <main id="container">
+            <section id="content">
+               <div class="con-box">
+                  <div class="inner">
+                     <div class="product-btn">
+                        <select name="sequence">
+                           <option>제품 보기</option>
+                           <option value="name">이름순</option>
+                           <option value="quantity">수량순</option>
+                        </select>
+                        <button class="basket-btn"><i class="xi-cart-o"></i><span></span></button>
+                     </div>
+                     <ul class="item-list">
+                        <!-- <li>
+                         <img src="./img/item_img_02.jpg" alt="(W) UGG Sport Yeah Slide Bright White" />
+                         <div class="item-title">
+                            <p class="item-brand">UGG</p>
+                            <p class="item-product-name">(W) UGG Sport Yeah Slide Bright White</p>
+                            <p class="item-name">(W) 어그 스포츠 예 슬라이드 브라이트 화이트</p>
+                            <p class="item-price">92,000원</p>
+                            <p class="item-quantity">남은 수량 : <span>1</span></p>
+                         </div>
+                         <button class="btn-wish">장바구니 담기</button>
+                      </li> -->
+                     </ul>
+                     <div class="more"><button>More</button></div>
+                     <!-- 장바구니 -->
+                     <div class="basket">
+                        <div class="list-header">
+                           <h2>장바구니</h2>
+                           <button class="close"><i class="xi-close"></i></button>
+                        </div>
+                        <table class="basket-list">
+                           <colgroup>
+                              <col class="wid1" />
+                              <col class="wid2" />
+                              <col class="wid3" />
+                              <col class="wid4" />
+                           </colgroup>
+                           <thead>
+                              <tr>
+                                 <th><input type="checkbox" name="all-check" id="item-all-check" /> 전체선택</th>
+                                 <th>상품명</th>
+                                 <th>수량</th>
+                                 <th>금액</th>
+                              </tr>
+                           </thead>
+                           <tbody>
+                              <!-- <tr>
+                                 <td>
+                                    <input type="checkbox" name="item-ckeck" /><img
+                                       src="./img/item_img_02.jpg"
+                                       alt="(W) UGG Sport Yeah Slide Bright White" />
+                                 </td>
+                                 <td><p class="basket-item-name">(W) 어그 스포츠 예 슬라이드 브라이트 화이트</p></td>
+                                 <td>
+                                    <div class="basket-item-quantity">
+                                       <input type="text" />
+                                       <div class="btn-up-down">
+                                          <button><i class="xi-angle-up-thin"></i></button>
+                                          <button><i class="xi-angle-down-thin"></i></button>
+                                       </div>
+                                    </div>
+                                 </td>
+                                 <td><p class="basket-item-price">92,000원</p></td>
+                              </tr> -->
+                           </tbody>
+                           <tfoot>
+                              <tr>
+                                 <td colspan="4"></td>
+                              </tr>
+                           </tfoot>
+                        </table>
+                        <div class="basket-btn-wrap">
+                           <button class="selective-product-order-btn">선택상품주문</button
+                           ><button class="delete-selected-product-btn">선택상품삭제</button
+                           ><button class="select-all-btn">전체선택</button><button class="empty-btn">비우기</button
+                           ><button class="all-product-order-btn">주문하기</button>
+                        </div>
+                     </div>
+                     <!-- 팝업창 -->
+                     <div class="basket-bg">
+                        <div class="pop-up">
+                           <p>해당 상품이<br />장바구니에 담겼습니다.</p>
+                           <span>장바구니로 이동하시겠습니까?</span>
+                           <div class="choice-keep-cart">
+                              <button class="keep-shopping">계속 쇼핑하기</button
+                              ><button class="shopping-cart">장바구니 보기</button>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="order-sheet-bg">
+                        <div class="pop-up">
+                           <div class="order-box">
+                              <button class="close"><i class="xi-close"></i></button>
+                              <h2>Order / Payment</h2>
+                              <table class="order-list">
+                                 <colgroup>
+                                    <col class="wid1" />
+                                    <col class="wid2" />
+                                    <col class="wid3" />
+                                    <col class="wid4" />
+                                 </colgroup>
+                                 <thead>
+                                    <tr>
+                                       <th>상품정보</th>
+                                       <th>수량</th>
+                                       <th>배송비</th>
+                                       <th>주문금액</th>
+                                    </tr>
+                                 </thead>
+                                 <tbody>
+                                    <!-- 
+                                      <tr>
+                                       <td>
+                                          <img
+                                             src="./img/item_img_07.png"
+                                             alt="(W) UGG Sport Yeah Slide Bright White" />
+                                          <span class="basket-item-name"
+                                             >에스티 로더 어드밴스드 나이트 리페어 싱크로나이즈드 멀티 리커버리 컴플렉스
+                                             50ml (국내 정식 발매 제품)</span
+                                          >
+                                       </td>
+                                       <td>1개</td>
+                                       <td>무료</td>
+                                       <td>92,0000원</td>
+                                    </tr>
+                                  -->
+                                 </tbody>
+                              </table>
+                              <div class="paying"><button class="paying-btn">결제하기</button></div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </section>
+         </main>
+         <footer id="footer"><div class="inner"></div></footer>
+         <script src="./js/main.js"></script>
+      </div>
+   </body>
+</html>
