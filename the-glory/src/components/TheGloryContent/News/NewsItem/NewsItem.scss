@@ -1,0 +1,41 @@
+.news {
+   li {
+      border-bottom: 1px solid #f0ebe3;
+      transition: 0.4s;
+      h3 {
+         background: #7d9d9c;
+         height: 40px;
+         text-indent: 10px;
+         line-height: 40px;
+         color: #f0ebe3;
+         cursor: pointer;
+         position: relative;
+         i {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            font-size: 25px;
+            transform: translateY(-50%);
+            color: #f0ebe333;
+         }
+      }
+      .details {
+         padding: 0 15px;
+         background: #d0c9c0;
+         max-height: 0;
+         overflow: hidden;
+         transition: 0.5s;
+         img {
+            margin-top: 10px;
+            width: 300px;
+         }
+         p {
+            margin-bottom: 10px;
+         }
+         &.on {
+            max-height: 1000vh;
+            overflow: hidden;
+         }
+      }
+   }
+}

@@ -1,0 +1,20 @@
+.content {
+   .menu {
+      li {
+         margin-left: 30px;
+         font-size: 20px;
+         color: #333;
+         cursor: pointer;
+         padding: 3px 7px;
+         transition: 0.4s;
+         &.on {
+            color: #576f72;
+            font-weight: 700;
+         }
+         &:hover {
+            background: #e4dccf;
+            border-radius: 10px;
+         }
+      }
+   }
+}
