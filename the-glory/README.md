@@ -1,7 +1,7 @@
 # the glory character introduction
 
 > React를 이용한 더 글로리 인물소개입니다  
-> [바로가기](https://chugyeong.github.io/toy-project/the-glory/build/) 로 접속하실 수 있습니다.
+> [바로가기](https://chugyeong.github.io/toy-project/the-glory/build/)를 통하여 접속하실 수 있습니다.
 
 <br>
 
@@ -20,7 +20,7 @@
 
 ## 3. 시연 영상
 
-![](./md_images/시연영상.gif)
+![시연영상](./md_images/시연영상.gif)
 
 <br>
 
