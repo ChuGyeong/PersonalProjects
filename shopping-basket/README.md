@@ -64,9 +64,9 @@
 
 <br>
 
-![메인](./md_images/index.gif)
-![장바구니상품담기](./md_images/addbasket.gif)
-![장바구니선택](./md_images/basketcheck.gif)
+![메인](./md_images/index.jpg)
+![장바구니](./md_images/basket.jpg)
+![결제화면](./md_images/basket.jpg)
 
 <br>
 
@@ -136,8 +136,6 @@ moreBtn.addEventListener('click', e => {
 </div>
 </details>
 
----
-
 <details>
 <summary>장바구니 담기 버튼 &#128204;</summary>
 <div markdown="1">
@@ -202,8 +200,6 @@ const btnWishMake = () => {
 </div>
 </details>
 
----
-
 <details>
 <summary>장바구니 출력 &#128204;</summary>
 <div markdown="1">
@@ -267,8 +263,6 @@ const btnWishMake = () => {
 </div>
 </details>
 
----
-
 <details>
 <summary>장바구니 아이템 수량 증가/감소 버튼 &#128204;</summary>
 <div markdown="1">
@@ -318,8 +312,6 @@ const btnWishMake = () => {
 -  makeProductList, makeBasketList 함수를 호출하여 상품 리스트와 장바구니 목록을 업데이트 하고 basketQuantityDownBtn에 대해서도 동일한 작업을 실행합니다. 다만, 수량이 1보다 큰 경우에만 감소하도록 체크합니다.
 </div>
 </details>
-
----
 
 <details>
 <summary>장바구니 수량 입력 상자 &#128204;</summary>
@@ -384,8 +376,6 @@ const quantityNum = () => {
 </div>
 </details>
 
----
-
 <details>
 <summary>장바구니 선택 삭제 버튼 &#128204;</summary>
 <div markdown="1">
@@ -435,8 +425,6 @@ deleteSelectedProductBtn.addEventListener('click', e => {
 
 </div>
 </details>
-
----
 
 <br>
 
