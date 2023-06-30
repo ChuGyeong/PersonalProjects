@@ -66,7 +66,7 @@
 
 ![메인](./md_images/index.jpg)
 ![장바구니](./md_images/basket.jpg)
-![결제화면](./md_images/basket.jpg)
+![결제화면](./md_images/order_payment.jpg)
 
 <br>
 
