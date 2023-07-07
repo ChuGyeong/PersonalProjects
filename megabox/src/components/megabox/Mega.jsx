@@ -16,7 +16,7 @@ const Mega = () => {
 
    //  데이터 가져오기
    useEffect(() => {
-      const url = `https://gist.githubusercontent.com/habi-er/ab331c60d55c02deb91175ad08c77296/raw/b3cf85feff299733c284d6a20336b69d48c3eb2f/movieList.json`;
+      const url = `https://gist.githubusercontent.com/ChuGyeong/0047fa1e3ba9e0e95c9dac427cb0719d/raw/4413a1dc9189b80d3ce4a9d280d82ca63470fa9e/megabox.json`;
       axios
          .get(url)
          .then(res => {
