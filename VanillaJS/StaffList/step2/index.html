@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <title>Document</title>
+      <link rel="stylesheet" href="css/reset.css" />
+      <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css" />
+      <style>
+         .con-box {
+            width: 500px;
+            margin: 50px auto;
+         }
+         .con-box .btn-wrap {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 50px;
+         }
+         .con-box .btn-wrap button {
+            width: 45%;
+            height: 50px;
+            border: 1px solid #000;
+         }
+         .con-box ul {
+            width: 100%;
+         }
+         .con-box ul li {
+            width: 100%;
+            border: 1px solid #000;
+            display: flex;
+            padding: 10px 30px;
+            box-sizing: border-box;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 5px;
+         }
+         .con-box ul li .img-box {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            overflow: hidden;
+         }
+         .con-box ul li .img-box img {
+            width: 100%;
+         }
+         .con-box ul li .txt-box {
+            width: 40%;
+         }
+         .con-box ul li .like-btn {
+            width: 50px;
+            height: 50px;
+            border: none;
+            background: transparent;
+            cursor: pointer;
+         }
+         .con-box ul li .like-btn i {
+            color: #000;
+            font-size: 30px;
+         }
+      </style>
+   </head>
+   <body>
+      <div class="con-box">
+         <div class="btn-wrap">
+            <button class="delete-btn">명단삭제</button>
+            <button class="view-btn">명단보기</button>
+         </div>
+         <ul class="list">
+            <!-- <li>
+               <div class="img-box"><img src="images/img1.jpg" alt="" /></div>
+               <div class="txt-box">
+                  <p>홍길동</p>
+                  <p>웹퍼블리셔</p>
+                  <p>010-0000-0000</p>
+               </div>
+               <button class="like-btn"><i class="xi-heart-o"></i></button>
+            </li> -->
+         </ul>
+      </div>
+      <script type="module">
+         import { peopleList } from './module/data.js';
+
+         const viewBtn = document.querySelector('.con-box .btn-wrap .view-btn');
+         const deletebtn = document.querySelector('.con-box .btn-wrap .delete-btn');
+         const list = document.querySelector('.con-box .list');
+
+         let likeBtn;
+
+         function showList() {
+            peopleList.map(item => {
+               list.innerHTML += `
+              <li>
+               <div class="img-box"><img src="${item.src}" alt="${item.name}" /></div>
+               <div class="txt-box">
+                  <p>${item.name}</p>
+                  <p>${item.job}</p>
+                  <p>${item.tel}</p>
+               </div>
+               <button class="like-btn"><i class="xi-heart-o"></i></button>
+            </li>
+              `;
+               likeBtn = document.querySelectorAll('.con-box .list .like-btn');
+            });
+            likeBtnMake();
+         }
+         showList();
+
+         deletebtn.addEventListener('click', e => {
+            list.innerHTML = '';
+         });
+         viewBtn.addEventListener('click', e => {
+            list.innerHTML = '';
+            showList();
+         });
+
+         function likeBtnMake() {
+            likeBtn.forEach(item => {
+               let isHeart = true;
+               item.addEventListener('click', e => {
+                  if (isHeart) {
+                     item.children[0].classList.replace('xi-heart-o', 'xi-heart');
+                     item.children[0].style.color = 'tomato';
+                  } else {
+                     item.children[0].classList.replace('xi-heart', 'xi-heart-o');
+                     item.children[0].style.color = 'black';
+                  }
+                  isHeart = !isHeart;
+               });
+            });
+         }
+      </script>
+   </body>
+</html>

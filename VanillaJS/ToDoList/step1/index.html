@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <title>Document</title>
+      <link rel="stylesheet" href="css/reset.css" />
+      <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css" />
+      <style>
+         .wrap {
+            width: 100%;
+         }
+
+         .wrap .inner {
+            width: 500px;
+            margin: 50px auto;
+         }
+         .wrap .inner h2 {
+            font-size: 25px;
+            font-weight: 500;
+            text-align: center;
+         }
+         .wrap .inner input[type='text'] {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            margin: 10px 0;
+            outline: none;
+            border: 1px solid #ccc;
+         }
+         .wrap .toDoList {
+            width: 100%;
+         }
+         .wrap .toDoList li {
+            border-bottom: 1px solid #ccc;
+            padding: 3px;
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+            position: relative;
+         }
+         .wrap .toDoList li i {
+            margin-right: 10px;
+            font-size: 25px;
+            cursor: pointer;
+         }
+         .wrap .toDoList li button {
+            position: absolute;
+            right: 3px;
+            top: 3px;
+            border: 1px solid #000;
+            background: #000;
+            color: #fff;
+            border-radius: 5px;
+            padding: 0 10px;
+            cursor: pointer;
+         }
+      </style>
+   </head>
+   <body>
+      <div class="wrap">
+         <div class="inner">
+            <h2>일정관리 앱</h2>
+            <form action="#">
+               <input type="text" placeholder="일정을 입력하세요" />
+            </form>
+            <ul class="toDoList">
+               <!-- <li>
+                  <i class="xi-check-circle-o"></i>
+                  <p>운동하기</p>
+                  <button>삭제</button>
+               </li> -->
+            </ul>
+         </div>
+      </div>
+      <script>
+         'use strict';
+         const toDoList = document.querySelector('form');
+         const txt = document.querySelector('form input');
+         const list = document.querySelector('.wrap .toDoList');
+         let obj = [];
+         let num;
+
+         const init = () => {
+            num = JSON.parse(localStorage.getItem('num')) || 0;
+         };
+         toDoList.addEventListener('submit', e => {
+            add();
+            show();
+            txt.value = '';
+            console.log(JSON.parse(localStorage.getItem('obj')));
+         });
+
+         function add() {
+            if (txt.value) {
+               num++;
+               obj = [...obj, { id: num, text: txt.value, isCheck: false }];
+               localStorage.setItem('obj', JSON.stringify(obj));
+               localStorage.setItem('num', num);
+            }
+         }
+
+         function show() {
+            obj = JSON.parse(localStorage.getItem('obj')) || [];
+            list.innerHTML = '';
+            obj.forEach(item => {
+               const { id, text, isCheck } = item;
+               let li = document.createElement('li');
+               let p = document.createElement('p');
+               let i = document.createElement('i');
+               let deleteBtn = document.createElement('button');
+               p.textContent = text;
+               if (!isCheck) {
+                  i.classList.add('xi-radiobox-blank');
+                  i.style.color = 'black';
+                  p.style.color = 'black';
+                  p.style.textDecorationLine = 'none';
+               } else {
+                  i.classList.add('xi-check-circle');
+                  i.style.color = 'tomato';
+                  p.style.color = 'tomato';
+                  p.style.textDecorationLine = 'line-through';
+               }
+               deleteBtn.textContent = '삭제';
+               li.append(i, p, deleteBtn);
+               list.append(li);
+               delShow(deleteBtn, id);
+               ckeck(i, isCheck, id);
+            });
+         }
+
+         function delShow(deleteBtn, id) {
+            deleteBtn.addEventListener('click', e => {
+               obj = obj.filter(item => item.id !== id);
+               localStorage.setItem('obj', JSON.stringify(obj));
+               show();
+            });
+         }
+
+         function ckeck(i, isCheck, id) {
+            i.addEventListener('click', e => {
+               obj.map(item => {
+                  if (item.id === id) {
+                     item.isCheck = !isCheck;
+                  }
+               });
+               localStorage.setItem('obj', JSON.stringify(obj));
+               show();
+            });
+         }
+         init();
+         show();
+      </script>
+   </body>
+</html>

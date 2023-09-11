@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <title>Document</title>
+      <link rel="stylesheet" href="css/reset.css" />
+      <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css" />
+      <style>
+         .wrap {
+            width: 100%;
+         }
+         .container {
+            width: 1000px;
+            margin: 50px auto;
+         }
+         .btn-wrap {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 50px;
+         }
+         .btn-wrap button {
+            width: 30%;
+            height: 40px;
+            background: #ccc;
+            border-radius: 20px;
+            border: none;
+            font-weight: 700;
+         }
+         .content {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+         }
+         .list {
+            width: 55%;
+         }
+         .list li {
+            width: 100%;
+            display: flex;
+            padding: 10px 30px;
+            box-sizing: border-box;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 5px;
+            border: 1px solid #ccc;
+         }
+         .list li .img-box {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            overflow: hidden;
+         }
+         .list li .img-box img {
+            width: 100%;
+         }
+         .list li .txt-box {
+            width: 60%;
+         }
+         .list li .btn-box {
+            display: flex;
+            flex-direction: column;
+         }
+         .list li .btn-box button:nth-child(1) {
+            width: 50px;
+            border: none;
+            background: transparent;
+            cursor: pointer;
+            color: #000;
+            font-size: 30px;
+         }
+         .list li .btn-box button:nth-child(2) {
+            width: 50px;
+            padding: 5px;
+            background: #ccc;
+            border: none;
+         }
+         .add-list {
+            width: 40%;
+            height: 800px;
+            border: 1px solid #ccc;
+            padding: 10px 30px;
+            box-sizing: border-box;
+            display: none;
+         }
+         .add-list.on {
+            display: block;
+         }
+         .add-list .profile {
+            width: 100%;
+         }
+         .add-list .profile li {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+         }
+         .add-list .profile li input {
+            width: 80%;
+         }
+         .add-list .add-btn {
+            width: 100%;
+            padding: 5px;
+            background: #ccc;
+            border: none;
+            margin: 20px 0;
+         }
+         .img-url-box {
+            background: #efefef;
+            padding: 10px;
+         }
+         .img-url-box h3 {
+            font-size: 18px;
+            font-weight: 500;
+            margin-bottom: 5px;
+            text-align: center;
+         }
+         .img-url-box p {
+            word-break: break-all;
+            margin-bottom: 10px;
+         }
+      </style>
+   </head>
+   <body>
+      <div class="wrap">
+         <main class="container">
+            <div class="btn-wrap">
+               <button class="delete-btn">명단삭제</button><button class="view-btn">명단보기</button
+               ><button class="hide-btn">명단추가 보이기</button>
+            </div>
+            <div class="content">
+               <ul class="list">
+                  <!-- <li>
+                     <div class="img-box"><img src="images/img2.jpg" alt="" /></div>
+                     <div class="txt-box">
+                        <p>홍길동</p>
+                        <p>웹퍼블리셔</p>
+                        <p>010-0000-0000</p>
+                     </div>
+                     <div class="btn-box">
+                        <button class="like-btn"><i class="xi-heart-o"></i></button
+                        ><button class="resignation-btn">퇴사</button>
+                     </div>
+                  </li> -->
+               </ul>
+               <div class="add-list">
+                  <form action="#">
+                     <ul class="profile">
+                        <li><label for="name">이름 :</label><input type="text" id="name" /></li>
+                        <li><label for="job">직업 :</label><input type="text" id="job" /></li>
+                        <li><label for="tel">연락처 :</label><input type="tel" id="tel" /></li>
+                        <li><label for="img">사진 :</label><input type="text" id="img" /></li>
+                     </ul>
+                     <button class="add-btn">추가</button>
+                  </form>
+                  <div class="img-url-box">
+                     <h3>이미지주소</h3>
+                     <p>https://i.pinimg.com/564x/1c/0e/ff/1c0eff0385454c5601f7675414c2217a.jpg</p>
+                     <p>https://i.pinimg.com/564x/da/47/dd/da47dd5515e0c1f8c6dcf52214942680.jpg</p>
+                     <p>https://i.pinimg.com/564x/15/38/7c/15387cbec5f1e74ece7aa13735ee07f9.jpg</p>
+                     <p>https://i.pinimg.com/564x/ff/03/c2/ff03c235d3fc50dedb217ae5970b0f99.jpg</p>
+                     <p>https://i.pinimg.com/564x/b9/d9/3f/b9d93f4667224b43bd731c643d4223e4.jpg</p>
+                     <p>https://i.pinimg.com/564x/91/ed/fe/91edfedfc8f15f476d4aaa9391eb5dc3.jpg</p>
+                     <p>https://i.pinimg.com/564x/3e/98/13/3e9813588b7fb890c9fa21fc01f69633.jpg</p>
+                     <p>https://i.pinimg.com/564x/7f/26/28/7f26287807ac06e8b4a89e67d3b5e21c.jpg</p>
+                     <p>https://i.pinimg.com/564x/37/e6/8e/37e68e2118fbf01d6832a02364bf7abd.jpg</p>
+                  </div>
+               </div>
+            </div>
+         </main>
+      </div>
+      <script
+         type="module"
+         src="app.js
+      "></script>
+   </body>
+</html>

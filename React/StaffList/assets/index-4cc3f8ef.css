@@ -1,0 +1,240 @@
+@import 'https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700&display=swap';
+.wrap {
+   width: 100%;
+}
+.wrap .container {
+   width: 1000px;
+   margin: 50px auto;
+}
+.wrap .container .btn-wrap {
+   width: 100%;
+   display: flex;
+   justify-content: space-between;
+   margin-bottom: 50px;
+}
+.wrap .container .btn-wrap button {
+   width: 30%;
+   height: 40px;
+   background: #ccc;
+   border-radius: 20px;
+   border: none;
+   font-weight: 700;
+}
+.wrap .container .content {
+   width: 100%;
+   display: flex;
+   justify-content: space-between;
+}
+.wrap .container .content .list {
+   width: 55%;
+}
+.wrap .container .content .list li {
+   width: 100%;
+   display: flex;
+   padding: 10px 30px;
+   box-sizing: border-box;
+   align-items: center;
+   justify-content: space-between;
+   margin-bottom: 5px;
+   border: 1px solid #ccc;
+}
+.wrap .container .content .list li .img-box {
+   width: 100px;
+   height: 100px;
+   border-radius: 50%;
+   overflow: hidden;
+   position: relative;
+}
+.wrap .container .content .list li .img-box img {
+   width: 100px;
+   object-fit: cover;
+}
+.wrap .container .content .list li .txt-box {
+   width: 60%;
+}
+.wrap .container .content .list li .btn-box {
+   display: flex;
+   flex-direction: column;
+}
+.wrap .container .content .list li .btn-box button:nth-child(1) {
+   width: 50px;
+   border: none;
+   background: transparent;
+   cursor: pointer;
+   color: #000;
+   font-size: 30px;
+}
+.wrap .container .content .list li .btn-box :nth-child(2) {
+   width: 50px;
+   padding: 5px;
+   background: #ccc;
+   border: none;
+}
+.wrap .container .content .add-list {
+   width: 40%;
+   height: 800px;
+   border: 1px solid #ccc;
+   padding: 10px 30px;
+   box-sizing: border-box;
+}
+.wrap .container .content .add-list form p {
+   display: flex;
+   justify-content: space-between;
+   margin-bottom: 5px;
+}
+.wrap .container .content .add-list form p input {
+   width: 80%;
+}
+.wrap .container .content .add-list button {
+   width: 100%;
+   padding: 5px;
+   background: #ccc;
+   border: none;
+   margin: 20px 0;
+}
+.wrap .container .content .add-list .img-url-box {
+   background: #efefef;
+   padding: 10px;
+}
+.wrap .container .content .add-list .img-url-box h3 {
+   font-size: 18px;
+   font-weight: 500;
+   margin-bottom: 5px;
+   text-align: center;
+}
+.wrap .container .content .add-list .img-url-box p {
+   word-break: break-all;
+   margin-bottom: 10px;
+}
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+   margin: 0;
+   padding: 0;
+   border: 0;
+   font-size: 100%;
+   font: inherit;
+   vertical-align: baseline;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+   display: block;
+}
+body {
+   line-height: 1.6;
+   font-size: 15px;
+   font-family: Noto Sans KR, sans-serif;
+}
+a {
+   line-height: 1.6;
+   font-size: 15px;
+   text-decoration: none;
+   color: #333;
+}
+ol,
+ul,
+li {
+   list-style: none;
+}
+blockquote,
+q {
+   quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+   content: '';
+   content: none;
+}
+table {
+   border-collapse: collapse;
+   border-spacing: 0;
+}
