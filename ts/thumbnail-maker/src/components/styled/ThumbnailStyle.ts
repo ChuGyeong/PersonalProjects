@@ -45,7 +45,6 @@ export const MainContainer = styled.main`
          justify-content: center;
          align-items: center;
          li {
-            /* mix-blend-mode: difference; */
             font-size: 20px;
             &:nth-child(1) {
                font-size: 55px;
@@ -98,6 +97,24 @@ export const MainContainer = styled.main`
             border: 1px solid #ccc;
             text-indent: 10px;
             font-size: 16px;
+         }
+      }
+   }
+   .management {
+      display: flex;
+      justify-content: center;
+      margin-top: 50px;
+      button {
+         width: 40%;
+         height: 40px;
+         border-radius: 20px;
+         border: none;
+         background: #efefef;
+         font-size: 16px;
+         font-weight: 700;
+         cursor: pointer;
+         &:nth-child(1) {
+            margin-right: 10px;
          }
       }
    }

@@ -1,5 +1,6 @@
 import React, { memo, useState } from 'react';
 import { MainContainer } from '../styled/ThumbnailStyle';
+import html2canvas from 'html2canvas';
 
 const Container = memo(() => {
    type Title = {
@@ -26,21 +27,74 @@ const Container = memo(() => {
       );
    }
    function randomGradient() {
-      const color1 = randomColor();
-      const color2 = randomColor();
+      let color1 = randomColor();
+      let color2 = randomColor();
+
       return `linear-gradient(${color1}, ${color2})`;
    }
 
    const [fontShadow, setFontShadow] = useState('none');
    const [fontColor, setFontColor] = useState('#000');
 
+   function getImg() {
+      const message = prompt('이미지 URL 주소를 입력해주세요');
+
+      /*  if (message) {
+         setBg(`url(${message})`);
+      } else {
+         alert('이미지 주소가 존재하지 않습니다.');
+      } */
+
+      if (message) {
+         // 이미지 URL이 유효한 경우
+         const img = new Image();
+
+         img.onload = () => {
+            setBg(`url(${message}) center/cover no-repeat`);
+         };
+
+         img.onerror = () => {
+            alert('유효하지 않은 이미지 주소입니다.');
+            setBg('lightGray');
+         };
+
+         img.src = message;
+      } else {
+         setBg('lightGray');
+         alert('유효하지 않은 이미지 주소입니다.');
+      }
+   }
+
+   const [titleSize, setTitleSize] = useState('55px');
+
+   function saveAsImage() {
+      const preview = document.querySelector('.preview');
+      if (preview instanceof HTMLElement) {
+         html2canvas(preview).then(canvas => {
+            const imgData = canvas.toDataURL('image/png');
+            let a = document.createElement('a');
+            a.href = imgData;
+            a.download = 'thumbnail.png';
+            a.click();
+         });
+      } else {
+         alert('Preview element not found');
+      }
+   }
+
+   //  const [alignment, setAlignment] = useState('center');
+
    return (
       <MainContainer>
          <section>
             <div className="inner">
-               <div className="preview" style={{ background: bg }}>
+               <div
+                  className="preview"
+                  style={{
+                     background: bg,
+                  }}>
                   <ul style={{ color: fontColor }}>
-                     <li style={{ textShadow: fontShadow }}>{title.main}</li>
+                     <li style={{ textShadow: fontShadow, fontSize: titleSize }}>{title.main}</li>
                      <li style={{ textShadow: fontShadow }}>{title.sub}</li>
                      <li style={{ textShadow: fontShadow }}>{title.category}</li>
                   </ul>
@@ -71,15 +125,23 @@ const Container = memo(() => {
                      <div className="btns">
                         <button onClick={() => setBg(randomGradient())}>랜덤 그라디언트</button>
                         <button onClick={() => setBg(randomColor())}>랜덤 단색</button>
-                        <button>이미지 URL</button>
+                        <button onClick={() => getImg()}>이미지 URL</button>
                      </div>
                   </div>
-                  {/* <div className="thumbnail options">
+                  {/*  <div className="thumbnail options">
                      <span>썸네일 구성 요소</span>
                      <div className="btns">
                         <button>제목, 부제목, 분류</button>
                         <button>제목, 분류</button>
                         <button>제목만</button>
+                     </div>
+                  </div> */}
+                  {/* <div className="thumbnail options">
+                     <span>정렬</span>
+                     <div className="btns">
+                        <button onClick={() => setAlignment('left')}>왼쪽</button>
+                        <button onClick={() => setAlignment('center')}>가운데</button>
+                        <button onClick={() => setAlignment('rigth')}>오른쪽</button>
                      </div>
                   </div> */}
                   <div className="text options">
@@ -94,9 +156,24 @@ const Container = memo(() => {
                         <button onClick={() => (fontColor === '#000' ? setFontColor('#fff') : setFontColor('#000'))}>
                            글자색 반전
                         </button>
-                        <button>제목 크기 작게</button>
+                        <button onClick={() => (titleSize === '30px' ? setTitleSize('55px') : setTitleSize('30px'))}>
+                           제목 크기 작게
+                        </button>
                      </div>
                   </div>
+               </div>
+               <div className="management">
+                  <button onClick={saveAsImage}>저장</button>
+                  <button
+                     onClick={() =>
+                        setTitle({
+                           main: '',
+                           sub: '',
+                           category: '',
+                        })
+                     }>
+                     취소
+                  </button>
                </div>
             </div>
          </section>
